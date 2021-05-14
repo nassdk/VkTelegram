@@ -55,7 +55,7 @@ repositories {
 
 dependencies {
 
-    implementation(dependencyNotation = "org.jetbrains.kotlin:kotlin-stdlib:1.4.31")
+    implementation(dependencyNotation = "org.jetbrains.kotlin:kotlin-stdlib:1.3.72")
     implementation(dependencyNotation = "androidx.core:core-ktx:1.3.2")
     implementation(dependencyNotation = "androidx.appcompat:appcompat:1.2.0")
     implementation(dependencyNotation = "com.google.android.material:material:1.3.0")
