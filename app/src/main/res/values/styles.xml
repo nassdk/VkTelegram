@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Button Styles -->
+
+    <style name="Widget.App.Button.Transparent.Rounded.Stroked" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="iconTint">@null</item>
+        <item name="strokeColor">@color/default_stroke_color</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+    <style name="Widget.App.Button.White.Rounded.Stroked.Green" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_green_007844</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="iconTint">@null</item>
+        <item name="strokeColor">@color/color_green_007844</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">@dimen/corner_radius_8</item>
+    </style>
+
+    <style name="Widget.App.Button.Transparent.Bottom_Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_green_007844</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/default_stroke_color</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="iconTint">@null</item>
+    </style>
+
+    <style name="Widget.App.Button.Gray.Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/gray_F0F0F0</item>
+        <item name="cornerRadius">@dimen/corner_radius_8</item>
+    </style>
+
+    <style name="Widget.App.Button.Gray.Rounded.Eight" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/gray_F0F0F0</item>
+        <item name="cornerRadius">@dimen/corner_radius_8</item>
+    </style>
+
+    <style name="Widget.App.Button.Iconized.Circle.Stroked" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="iconTint">@null</item>
+        <item name="android:paddingLeft">19dp</item>
+        <item name="android:paddingRight">19dp</item>
+        <item name="strokeColor">@color/default_stroke_color</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">32dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Iconized.Circle.Stroked.Black" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="iconTint">@null</item>
+        <item name="android:paddingLeft">19dp</item>
+        <item name="android:paddingRight">19dp</item>
+        <item name="strokeColor">@color/default_stroke_color</item>
+        <item name="backgroundTint">@color/color_black</item>
+        <item name="cornerRadius">32dp</item>
+    </style>
+
+    <style name="Widget.App.Button.Orange.Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/orange_F37D0F</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+    <style name="Widget.App.Button.Iconized.Rounded.Stroked" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeWidth">1dp</item>
+        <item name="iconTint">@null</item>
+        <item name="paddingEnd">10dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="strokeColor">@color/gray_F5F4F5</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+    <style name="Widget.App.Button.Iconized.Green.Rounded" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="paddingEnd">10dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="backgroundTint">@color/color_green_007844</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+    <style name="Widget.App.Button.Green.Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_green_007844</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+    <style name="Widget.App.Button.Green.Rounded.Eight" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_green_007844</item>
+        <item name="cornerRadius">@dimen/corner_radius_8</item>
+    </style>
+
+    <style name="Widget.App.Button.Black.Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_black</item>
+        <item name="cornerRadius">@dimen/corner_radius_8</item>
+    </style>
+
+
+    <style name="Widget.App.Button.Stroked_Green.Rounded.Eight" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_green_007844</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/color_green_007844</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">@dimen/corner_radius_8</item>
+    </style>
+
+
+    <style name="Widget.App.Button.Basket" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">32dp</item>
+    </style>
+
+    <style name="Widget.App.Button.White" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_white</item>
+    </style>
+
+
+    <style name="Widget.App.Button.White.BlueText" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textColor">@color/color_blue_0089ED</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="cornerRadius">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_white</item>
+    </style>
+
+    <!-- Radio Button Styles -->
+    <style name="Widget.App.RadioButton.White.Stroked.Rounded" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="strokeColor">@color/gray_EBEBEB</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/color_white</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+    <!-- TextView Styles -->
+
+    <style name="Widget.App.TextView.Black.12" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.10" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.18" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.20" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.Bold.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.Bold.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.Bold.18" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.Bold.20" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Dark.Gray.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/black_64_transp</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.10" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_10</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.18" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.20" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.24" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.Bold.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.Bold.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.Bold.18" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.Bold.20" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.White.Bold.24" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_white</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Gray.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/gray_858585</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Gray.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/gray_ADADAD</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Gray.18" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/gray_ADADAD</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Gray.20" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/gray_ADADAD</item>
+        <item name="android:textSize">@dimen/text_size_20</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black.24" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/gray_ADADAD</item>
+        <item name="android:textSize">@dimen/text_size_24</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black_85.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black_transparent_85</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black_48.12" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black_transparent_48</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black_48.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black_transparent_48</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Black_64.Bold.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_black_transparent_64</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Orange.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/orange_F37D0F</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Red.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/red_DE0000</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+    <style name="Widget.App.TextView.Red.Bold.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/red_DE0000</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.App.TextView.Green.14" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_green_007844</item>
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextView.Green.Bold.16" parent="Widget.MaterialComponents.TextView">
+        <item name="android:textColor">@color/color_green_007844</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- EditText Styles -->
+
+    <!--    <style name="Widget.App.EditText.Black.14.Gray" parent="Widget.AppCompat.EditText">-->
+    <!--        <item name="android:textColor">@color/color_black</item>-->
+    <!--        <item name="android:textStyle">normal</item>-->
+    <!--        <item name="android:maxLines">1</item>-->
+    <!--        <item name="android:textSize">@dimen/text_size_14</item>-->
+    <!--        <item name="android:textColorHint">@color/gray_858585</item>-->
+    <!--        <item name="android:background">@drawable/background_rounded_by_six_stroked</item>-->
+    <!--        <item name="theme">@style/Widget.App.EditText.Custom.Theme</item>-->
+    <!--        <item name="android:textCursorDrawable">@drawable/background_default_edit_text_cursor</item>-->
+    <!--    </style>-->
+
+    <style name="Widget.App.EditText.Custom.Theme" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">@color/color_transparent</item>
+        <item name="colorControlActivated">@color/color_transparent</item>
+    </style>
+
+
+    <!-- Bottom Sheet Dialog -->
+
+    <style name="CustomBottomSheetDialog.Draggable" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppModalStyle</item>
+        <item name="behavior_draggable">false</item>
+    </style>
+
+    <style name="AppModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!-- Bottom Navigation -->
+    <style name="BottomNavigationView.Text.Active" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/color_green_007844</item>
+    </style>
+
+    <style name="BottomNavigationView.Text.InActive" parent="@style/TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/gray_858585</item>
+    </style>
+
+
+    <!-- Progress Bar -->
+
+    <style name="progressBlackTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/color_black</item>
+    </style>
+
+    <style name="progressGreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/color_green_007844</item>
+    </style>
+
+    <style name="progressWhiteTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/color_white</item>
+    </style>
+
+    <!-- Tab Layout -->
+
+    <!--    <style name="PurchaseTypeTabLayout" parent="Widget.Design.TabLayout">-->
+    <!--        <item name="android:background">@drawable/background_rounded_by_four_gray_eeeeee</item>-->
+    <!--        <item name="tabIndicatorColor">@color/color_green_007844</item>-->
+    <!--        <item name="tabIndicatorHeight">36dp</item>-->
+    <!--        <item name="tabIndicator">@drawable/background_rounded_by_four_white</item>-->
+    <!--        <item name="tabSelectedTextColor">@color/color_white</item>-->
+    <!--        <item name="tabTextAppearance">@style/PurchasesTabTextAppearance</item>-->
+    <!--        <item name="tabTextColor">@color/color_black</item>-->
+    <!--        <item name="tabRippleColor">@null</item>-->
+    <!--    </style>-->
+
+    <!-- Text Appearance -->
+
+    <style name="PurchasesTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!-- Switch -->
+    <style name="Switch.Green" parent="Widget.AppCompat.CompoundButton.Switch">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/color_green_007844</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/black_64_transp</item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#42221f1f</item>
+    </style>
+
+</resources>
