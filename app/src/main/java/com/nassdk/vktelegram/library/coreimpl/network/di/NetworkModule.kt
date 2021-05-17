@@ -6,7 +6,7 @@ import com.nassdk.vktelegram.library.coreimpl.network.connection.NetworkChecking
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.components.SingletonComponent
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonConfiguration
 import okhttp3.MediaType.Companion.toMediaType
@@ -16,7 +16,7 @@ import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ApplicationContext::class)
+@InstallIn(SingletonComponent::class)
 abstract class NetworkModule {
 
     companion object {

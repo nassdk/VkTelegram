@@ -4,6 +4,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlinx-serialization")
     id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -69,7 +70,7 @@ dependencies {
     implementation(dependencyNotation = "androidx.navigation:navigation-ui-ktx:2.3.5")
 
     implementation(dependencyNotation = "com.google.dagger:hilt-android:2.35")
-    implementation(dependencyNotation = "com.google.dagger:hilt-compiler:2.35")
+    kapt(dependencyNotation = "com.google.dagger:hilt-compiler:2.35")
 
     implementation(dependencyNotation = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
     implementation(dependencyNotation = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0")

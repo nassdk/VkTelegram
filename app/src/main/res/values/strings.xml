@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">VkTelegramer</string>
+    <integer name="com_vk_sdk_AppId">7854267</integer>
+
+    <string name="screen_auth_button_title">Авторизоваться</string>
+    <string name="screen_auth_info_message">Вас приветствует приложение VkTelegramer. \nОбменивайтесь сообщениями с друзьями в свое удовольствие!</string>
 </resources>
