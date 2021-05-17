@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingHorizontal="@dimen/base_padding_16">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/infoMessage"
+        style="@style/Widget.App.TextView.White.18"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/base_margin_32"
+        android:gravity="center"
+        android:text="@string/screen_auth_info_message"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/makeAuth"
+        style="@style/Widget.App.Button.White.Rounded.Secondary"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height_48"
+        android:layout_marginTop="@dimen/base_margin_42"
+        android:text="@string/screen_auth_button_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/infoMessage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
