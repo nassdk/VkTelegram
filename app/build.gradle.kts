@@ -78,6 +78,7 @@ dependencies {
     implementation(dependencyNotation = "com.squareup.okhttp3:logging-interceptor:4.9.0")
 
     implementation(dependencyNotation = "com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(dependencyNotation = "androidx.datastore:datastore-preferences:1.0.0-beta01")
 
     implementation(dependencyNotation = "com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:1.4.1")
 
