@@ -13,6 +13,6 @@
 
     <!-- Auth -->
     <string name="screen_auth_button_title">Авторизоваться</string>
-    <string name="screen_auth_info_message">Вас приветствует приложение VkTelegramer. \nОбменивайтесь сообщениями с друзьями в свое удовольствие!</string>
+    <string name="screen_auth_info_message">Вас приветствует приложение VkVideo. \nСкачивайте, просмотраивайте и делитесь своими видеозаписями из ВКнотакте!</string>
 
 </resources>
