@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VkTelegramer</string>
+    <string name="app_name">VkVideo</string>
 
     <integer name="com_vk_sdk_AppId">7854267</integer>
 
