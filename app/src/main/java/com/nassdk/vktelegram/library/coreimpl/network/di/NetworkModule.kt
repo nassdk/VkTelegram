@@ -2,7 +2,10 @@ package com.nassdk.vktelegram.library.coreimpl.network.di
 
 import android.content.Context
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.nassdk.vktelegram.BuildConfig
+import com.nassdk.vktelegram.library.coreimpl.common.data.DataStorage
 import com.nassdk.vktelegram.library.coreimpl.network.connection.NetworkChecking
+import com.nassdk.vktelegram.library.coreimpl.network.interceptor.CredentialsInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -29,10 +32,21 @@ abstract class NetworkModule {
 
         @Provides
         @Singleton
-        fun provideOkHttp3(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient =
-            OkHttpClient.Builder()
-                .addInterceptor(loggingInterceptor)
-                .build()
+        fun provideCredentialsInterceptor(dataStorage: DataStorage) = CredentialsInterceptor(
+            dataStorage = dataStorage
+        )
+
+        @Provides
+        @Singleton
+        fun provideOkHttp3(
+            loggingInterceptor: HttpLoggingInterceptor,
+            credentialsInterceptor: CredentialsInterceptor
+        ): OkHttpClient =
+            OkHttpClient.Builder().apply {
+                addInterceptor(credentialsInterceptor)
+                if (BuildConfig.DEBUG) addInterceptor(loggingInterceptor)
+            }.build()
+
 
         @Provides
         @Singleton
