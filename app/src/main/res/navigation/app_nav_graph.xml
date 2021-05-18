@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.nassdk.vktelegram.feature.splash.SplashFragment"
+        android:name="com.nassdk.vkvideo.feature.splash.SplashFragment"
         android:label="SplashFragment">
         <action
             android:id="@+id/action_splashFragment_to_authFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/authFragment"
-        android:name="com.nassdk.vktelegram.feature.auth.AuthFragment"
+        android:name="com.nassdk.vkvideo.feature.auth.AuthFragment"
         android:label="AuthFragment" />
 </navigation>
