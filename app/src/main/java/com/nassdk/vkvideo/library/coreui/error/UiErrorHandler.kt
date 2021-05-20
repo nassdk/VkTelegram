@@ -3,7 +3,7 @@ package com.nassdk.vkvideo.library.coreui.error
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.library.coreapi.common.error.ErrorHandler
 import com.nassdk.vkvideo.library.coreapi.common.resourcemanager.ResourceManager
-import com.test.roomsample.library.coreimpl.common.error.ErrorWrapper
+import com.nassdk.vkvideo.library.coreimpl.common.error.ErrorWrapper
 import javax.inject.Inject
 import javax.inject.Singleton
 

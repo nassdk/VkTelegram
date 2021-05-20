@@ -1,4 +1,4 @@
-package com.test.roomsample.library.coreimpl.common.error
+package com.nassdk.vkvideo.library.coreimpl.common.error
 
 sealed class ErrorWrapper {
     object Unknown : ErrorWrapper()

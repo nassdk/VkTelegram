@@ -2,7 +2,6 @@ package com.nassdk.vkvideo.library.coreimpl.common.error
 
 import com.nassdk.vkvideo.library.coreapi.common.error.ErrorHandler
 import com.nassdk.vkvideo.library.coreimpl.network.error.NetworkErrorParser
-import com.test.roomsample.library.coreimpl.common.error.ErrorWrapper
 import retrofit2.HttpException
 import java.io.IOException
 import java.util.concurrent.TimeoutException
