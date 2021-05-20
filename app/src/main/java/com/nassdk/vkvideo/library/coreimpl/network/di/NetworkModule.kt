@@ -1,7 +1,8 @@
 package com.nassdk.vkvideo.library.coreimpl.network.di
 
 import android.content.Context
-import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.nassdk.vkvideo.BuildConfig
 import com.nassdk.vkvideo.library.coreimpl.common.data.DataStorage
 import com.nassdk.vkvideo.library.coreimpl.network.connection.NetworkChecking
@@ -10,12 +11,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kotlinx.serialization.json.Json
-import kotlinx.serialization.json.JsonConfiguration
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
@@ -50,13 +49,9 @@ abstract class NetworkModule {
 
         @Provides
         @Singleton
-        fun provideJson(): Json = Json(
-            JsonConfiguration.Stable.copy(
-                isLenient = true,
-                prettyPrint = true,
-                ignoreUnknownKeys = true
-            )
-        )
+        fun provideGson(): Gson = GsonBuilder()
+            .setLenient()
+            .create()
 
         @Provides
         @Singleton
@@ -67,12 +62,12 @@ abstract class NetworkModule {
         @Singleton
         fun provideRetrofit(
             client: OkHttpClient,
-            json: Json
+            gson: Gson
         ): Retrofit =
             Retrofit.Builder()
                 .baseUrl(".")
                 .client(client)
-                .addConverterFactory(json.asConverterFactory("application/json".toMediaType()))
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build()
     }
 }

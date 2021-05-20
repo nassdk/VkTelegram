@@ -1,15 +1,14 @@
 package com.nassdk.vkvideo.library.coreimpl.network.error
 
-import kotlinx.serialization.json.Json
+import com.google.gson.Gson
 import javax.inject.Inject
 
 class NetworkErrorParser @Inject constructor(
-    private val json: Json
+    private val gson: Gson
 ) {
     fun parseError(response: String?): BaseErrorNetModel.ErrorNetModel? = try {
-//        val model = json.decodeFromString<BaseErrorNetModel>(string = response.orEmpty())
-//        model.error
-        null
+        val model = gson.fromJson(response, BaseErrorNetModel::class.java)
+        model.error
     } catch (e: Exception) {
         null
     }

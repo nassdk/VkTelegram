@@ -2,7 +2,6 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-android-extensions")
-    id("kotlinx-serialization")
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
 }
@@ -72,13 +71,14 @@ dependencies {
     implementation(dependencyNotation = "com.google.dagger:hilt-android:2.35")
     kapt(dependencyNotation = "com.google.dagger:hilt-compiler:2.35")
 
-    implementation(dependencyNotation = "org.jetbrains.kotlinx:kotlinx-serialization-runtime:0.20.0")
-    implementation(dependencyNotation = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.5.0")
+    implementation(dependencyNotation = "com.google.code.gson:gson:2.8.6")
 
     implementation(dependencyNotation = "com.squareup.okhttp3:okhttp:4.9.0")
     implementation(dependencyNotation = "com.squareup.okhttp3:logging-interceptor:4.9.0")
 
     implementation(dependencyNotation = "com.squareup.retrofit2:retrofit:2.9.0")
+    implementation(dependencyNotation = "com.squareup.retrofit2:converter-gson:2.9.0")
+
     implementation(dependencyNotation = "androidx.datastore:datastore-preferences:1.0.0-beta01")
 
     implementation(dependencyNotation = "com.kirich1409.viewbindingpropertydelegate:viewbindingpropertydelegate:1.4.1")
