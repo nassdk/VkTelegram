@@ -8,9 +8,9 @@ class AuthObserver @Inject constructor() {
 
     private val _events = MutableSharedFlow<Pair<Boolean, String>>()
 
-    val events = _events.asSharedFlow() // read-only public view
+    val events = _events.asSharedFlow()
 
     suspend fun postEvent(event: Pair<Boolean, String>) {
-        _events.emit(event) // suspends until subscribers receive it
+        _events.emit(event)
     }
 }
