@@ -10,7 +10,6 @@ import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKAccessToken
 import com.vk.api.sdk.auth.VKAuthCallback
 import dagger.hilt.android.AndroidEntryPoint
-import timber.log.Timber
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -49,14 +48,12 @@ class AppActivity : AppCompatActivity() {
                             )
                         )
                     }
-                    Timber.e("VKAccessToken success $token")
                 }
 
                 override fun onLoginFailed(errorCode: Int) {
                     lifecycleScope.launchWhenStarted {
                         authObserver.postEvent(event = Pair(first = false, second = ""))
                     }
-                    Timber.e("VKAccessToken error $errorCode")
                 }
             }
         )
