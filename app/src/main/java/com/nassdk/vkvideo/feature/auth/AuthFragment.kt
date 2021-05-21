@@ -1,6 +1,7 @@
 package com.nassdk.vkvideo.feature.auth
 
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.arkivanov.mvikotlin.core.binder.BinderLifecycleMode
 import com.arkivanov.mvikotlin.core.lifecycle.asMviLifecycle
@@ -43,10 +44,7 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
         }
     }
 
-    private fun onAuthSuccess() {
-        Toast.makeText(requireContext(), "Успешная авторизация", Toast.LENGTH_SHORT).show()
-//        findNavController().navigate() TODO
-    }
+    private fun onAuthSuccess() = findNavController().navigate(R.id.videosFragment)
 
     private fun showError() {
         Toast.makeText(

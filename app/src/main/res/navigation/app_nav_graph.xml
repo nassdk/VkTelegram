@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/authFragment"
         android:name="com.nassdk.vkvideo.feature.auth.AuthFragment"
-        android:label="AuthFragment" />
+        android:label="AuthFragment">
+        <action
+            android:id="@+id/action_authFragment_to_videosFragment"
+            app:destination="@id/videosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videosFragment"
+        android:name="com.nassdk.vkvideo.feature.videos.presentation.VideosFragment"
+        android:label="VideosFragment" />
 </navigation>
