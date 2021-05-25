@@ -56,14 +56,12 @@ repositories {
 dependencies {
 
     implementation(dependencyNotation = "org.jetbrains.kotlin:kotlin-stdlib:1.5.0")
+    
     implementation(dependencyNotation = "androidx.core:core-ktx:1.5.0")
     implementation(dependencyNotation = "androidx.appcompat:appcompat:1.3.0")
-    implementation(dependencyNotation = "com.google.android.material:material:1.3.0")
     implementation(dependencyNotation = "androidx.constraintlayout:constraintlayout:2.0.4")
 
-    implementation(dependencyNotation = "com.arkivanov.mvikotlin:mvikotlin:2.0.1")
-    implementation(dependencyNotation = "com.arkivanov.mvikotlin:mvikotlin-main:2.0.1")
-    implementation(dependencyNotation = "com.arkivanov.mvikotlin:mvikotlin-extensions-coroutines:2.0.1")
+    implementation(dependencyNotation = "com.google.android.material:material:1.3.0")
 
     implementation(dependencyNotation = "androidx.navigation:navigation-fragment-ktx:2.3.5")
     implementation(dependencyNotation = "androidx.navigation:navigation-ui-ktx:2.3.5")

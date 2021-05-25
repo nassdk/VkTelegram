@@ -1,38 +1,26 @@
 package com.nassdk.vkvideo.feature.auth
 
 import android.widget.Toast
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.arkivanov.mvikotlin.core.binder.BinderLifecycleMode
-import com.arkivanov.mvikotlin.core.lifecycle.asMviLifecycle
-import com.arkivanov.mvikotlin.extensions.coroutines.bind
-import com.arkivanov.mvikotlin.extensions.coroutines.labels
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ScreenAuthBinding
 import com.nassdk.vkvideo.library.coreui.base.BaseFragment
+import com.nassdk.vkvideo.library.coreui.util.launchWhenStarted
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKScope
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
+import kotlinx.coroutines.flow.onEach
 
 @AndroidEntryPoint
 class AuthFragment : BaseFragment(R.layout.screen_auth) {
 
     private val viewBinding: ScreenAuthBinding by viewBinding()
-
-    @Inject
-    lateinit var store: AuthStore
+    private val viewModel: AuthViewModel by viewModels()
 
     override fun prepareUi() {
-
-        bind(this@AuthFragment.lifecycle.asMviLifecycle(), BinderLifecycleMode.START_STOP) {
-            store.labels.bindTo { label ->
-                when (label) {
-                    AuthStore.Label.AuthError -> showError()
-                    AuthStore.Label.OpenVideos -> onAuthSuccess()
-                }
-            }
-        }
 
         viewBinding.makeAuth.setOnClickListener {
             VK.login(
@@ -42,6 +30,15 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
                 )
             )
         }
+    }
+
+    override fun setupViewModel() {
+
+        viewModel.authState.onEach { authSuccess ->
+            if (authSuccess)
+                onAuthSuccess()
+            else showError()
+        }.launchWhenStarted(lifecycleScope)
     }
 
     private fun onAuthSuccess() = findNavController().navigate(R.id.videosFragment)
