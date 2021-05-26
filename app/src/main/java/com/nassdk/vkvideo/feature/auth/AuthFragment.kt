@@ -3,8 +3,6 @@ package com.nassdk.vkvideo.feature.auth
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
-import by.kirich1409.viewbindingdelegate.viewBinding
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ScreenAuthBinding
 import com.nassdk.vkvideo.library.coreui.base.BaseFragment
@@ -17,10 +15,15 @@ import kotlinx.coroutines.flow.onEach
 @AndroidEntryPoint
 class AuthFragment : BaseFragment(R.layout.screen_auth) {
 
-    private val viewBinding: ScreenAuthBinding by viewBinding()
+    private var _viewBinding: ScreenAuthBinding? = null
+
+    private val viewBinding get() = _viewBinding!!
+
     private val viewModel: AuthViewModel by viewModels()
 
     override fun prepareUi() {
+
+        _viewBinding = ScreenAuthBinding.bind(requireView())
 
         viewBinding.makeAuth.setOnClickListener {
             VK.login(
@@ -41,7 +44,7 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
         }.launchWhenStarted(lifecycleScope)
     }
 
-    private fun onAuthSuccess() = findNavController().navigate(R.id.videosFragment)
+    private fun onAuthSuccess() = Unit
 
     private fun showError() {
         Toast.makeText(

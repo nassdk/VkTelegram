@@ -1,12 +1,15 @@
 package com.nassdk.vkvideo.library.coreimpl.network.error
 
-import com.google.gson.annotations.SerializedName
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class BaseErrorNetModel(
-    @SerializedName(value = "error") val error: ErrorNetModel
+    @SerialName(value = "error") val error: ErrorNetModel
 ) {
+    @Serializable
     data class ErrorNetModel(
-        @SerializedName(value = "error_code") val code: Int,
-        @SerializedName(value = "error_msg") val message: String
+        @SerialName(value = "error_code") val code: Int,
+        @SerialName(value = "error_msg") val message: String
     )
 }

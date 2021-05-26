@@ -1,12 +1,10 @@
 package com.nassdk.vkvideo.library.coreimpl.network.interceptor
 
-import com.nassdk.vkvideo.BuildConfig
 import com.nassdk.vkvideo.library.coreimpl.common.data.DataStorage
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response
-import timber.log.Timber
 import javax.inject.Inject
 
 class CredentialsInterceptor @Inject constructor(
@@ -28,10 +26,6 @@ class CredentialsInterceptor @Inject constructor(
             .addQueryParameter("access_token", accessToken)
 
         val requestBuilder = originalRequest.newBuilder().url(newUrl.build())
-
-        if (BuildConfig.DEBUG) {
-            Timber.tag("REQUEST_URL_PRINT").e(newUrl.toString())
-        }
 
         return chain.proceed(requestBuilder.build())
     }

@@ -4,7 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.NavHostFragment
 import com.nassdk.vkvideo.library.coreimpl.common.auth.AuthObserver
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKAccessToken
@@ -21,13 +20,6 @@ class AppActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.app_screen)
-
-        val host: NavHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment?
-                ?: return
-
-        val navController = host.navController
-        navController.navigate(R.id.splashFragment)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
