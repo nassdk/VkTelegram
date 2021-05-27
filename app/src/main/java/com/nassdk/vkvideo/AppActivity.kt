@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import com.nassdk.vkvideo.feature.auth.AuthFragment
+import com.nassdk.vkvideo.feature.splash.SplashFragment
 import com.nassdk.vkvideo.library.coreimpl.common.auth.AuthObserver
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKAccessToken
@@ -24,7 +24,7 @@ class AppActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             val fragmentTransaction = supportFragmentManager.beginTransaction()
-            fragmentTransaction.add(R.id.container, AuthFragment())
+            fragmentTransaction.add(R.id.container, SplashFragment())
             fragmentTransaction.commit()
         }
     }
