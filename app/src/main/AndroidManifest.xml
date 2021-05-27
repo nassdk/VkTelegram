@@ -11,7 +11,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.VkMessanger">
+        android:theme="@style/Theme.VkVideo">
         <activity android:name="com.nassdk.vkvideo.AppActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
