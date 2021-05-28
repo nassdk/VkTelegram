@@ -63,6 +63,8 @@ dependencies {
 
     implementation(dependencyNotation = "androidx.datastore:datastore-preferences:1.0.0-beta01")
 
+    implementation(dependencyNotation = "androidx.paging:paging-runtime:3.0.0")
+
     implementation(dependencyNotation = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
     implementation(dependencyNotation = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
 
