@@ -55,37 +55,21 @@ repositories {
 
 dependencies {
 
-    implementation(dependencyNotation = "androidx.core:core-ktx:1.5.0")
-    implementation(dependencyNotation = "androidx.appcompat:appcompat:1.3.0")
-    implementation(dependencyNotation = "androidx.activity:activity-ktx:1.2.3")
-    implementation(dependencyNotation = "androidx.fragment:fragment-ktx:1.3.4")
-    implementation(dependencyNotation = "androidx.constraintlayout:constraintlayout:2.0.4")
+    implementAndroidXCore()
+    implementLifecycleHelpers()
+    implementHilt()
 
-    implementation(dependencyNotation = "androidx.datastore:datastore-preferences:1.0.0-beta01")
-
-    implementation(dependencyNotation = "androidx.paging:paging-runtime:3.0.0")
-
-    implementation(dependencyNotation = "androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation(dependencyNotation = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1")
-
-    implementation(dependencyNotation = "org.jetbrains.kotlin:kotlin-stdlib:1.5.0")
-    implementation(dependencyNotation = "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.4.3")
-    implementation(dependencyNotation = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.2.1")
-    implementation(dependencyNotation = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0-RC")
-
-    implementation(dependencyNotation = "com.google.dagger:hilt-android:2.35")
-    kapt(dependencyNotation = "com.google.dagger:hilt-compiler:2.35")
-
-    implementation(dependencyNotation = "com.google.android.material:material:1.3.0")
-
-    implementation(dependencyNotation = "com.squareup.okhttp3:okhttp:4.9.0")
-    implementation(dependencyNotation = "com.squareup.okhttp3:logging-interceptor:4.9.0")
-
-    implementation(dependencyNotation = "com.squareup.retrofit2:retrofit:2.9.0")
-
-    implementation(dependencyNotation = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
-
-    implementation(dependencyNotation = "io.coil-kt:coil:1.1.1")
-
-    implementation(dependencyNotation = "com.vk:android-sdk-core:3.1.0")
+    implementation(dependencyNotation = Dependencies.dataStore)
+    implementation(dependencyNotation = Dependencies.paging)
+    implementation(dependencyNotation = Dependencies.kotlin)
+    implementation(dependencyNotation = Dependencies.coroutines)
+    implementation(dependencyNotation = Dependencies.coroutinesCore)
+    implementation(dependencyNotation = Dependencies.serializationJson)
+    implementation(dependencyNotation = Dependencies.material)
+    implementation(dependencyNotation = Dependencies.okHttp3)
+    implementation(dependencyNotation = Dependencies.logging)
+    implementation(dependencyNotation = Dependencies.retrofit)
+    implementation(dependencyNotation = Dependencies.serializationConverter)
+    implementation(dependencyNotation = Dependencies.coil)
+    implementation(dependencyNotation = Dependencies.vkCore)
 }
