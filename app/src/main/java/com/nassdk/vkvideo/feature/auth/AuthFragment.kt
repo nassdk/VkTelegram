@@ -53,4 +53,9 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
             Toast.LENGTH_SHORT
         ).show()
     }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _viewBinding = null
+    }
 }
