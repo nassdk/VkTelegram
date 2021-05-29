@@ -9,10 +9,8 @@ import com.nassdk.vkvideo.library.coreui.base.BaseFragment
 import com.nassdk.vkvideo.library.coreui.util.launchWhenStarted
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKScope
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
 
-@AndroidEntryPoint
 class AuthFragment : BaseFragment(R.layout.screen_auth) {
 
     private var _viewBinding: ScreenAuthBinding? = null
