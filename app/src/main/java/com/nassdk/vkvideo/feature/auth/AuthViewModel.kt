@@ -17,9 +17,9 @@ class AuthViewModel @Inject constructor(
     private val dataStorage: DataStorage
 ) : BaseViewModel() {
 
-    private val _authState: MutableStateFlow<Boolean> = MutableStateFlow(false)
+    private val _authState: MutableStateFlow<Boolean?> = MutableStateFlow(null)
 
-    val authState: StateFlow<Boolean>
+    val authState: StateFlow<Boolean?>
         get() = _authState
 
     init {

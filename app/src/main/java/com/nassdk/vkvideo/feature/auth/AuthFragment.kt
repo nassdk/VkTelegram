@@ -1,16 +1,18 @@
 package com.nassdk.vkvideo.feature.auth
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ScreenAuthBinding
 import com.nassdk.vkvideo.library.coreui.base.BaseFragment
+import com.nassdk.vkvideo.library.coreui.util.FloatingSnackBar
 import com.nassdk.vkvideo.library.coreui.util.launchWhenStarted
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKScope
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.onEach
 
+@AndroidEntryPoint
 class AuthFragment : BaseFragment(R.layout.screen_auth) {
 
     private var _viewBinding: ScreenAuthBinding? = null
@@ -24,33 +26,37 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
         _viewBinding = ScreenAuthBinding.bind(requireView())
 
         viewBinding.makeAuth.setOnClickListener {
-            VK.login(
-                activity = requireActivity(),
-                scopes = setOf(
-                    VKScope.VIDEO
-                )
-            )
+            makeAuth()
         }
     }
 
     override fun setupViewModel() {
 
         viewModel.authState.onEach { authSuccess ->
-            if (authSuccess)
-                onAuthSuccess()
-            else showError()
+            when (authSuccess) {
+                true -> onAuthSuccess()
+                else -> onAuthError()
+//                else -> Unit
+            }
         }.launchWhenStarted(lifecycleScope)
     }
 
-    private fun onAuthSuccess() = Unit
-
-    private fun showError() {
-        Toast.makeText(
-            requireContext(),
-            "Что-то пошло не так, пожалуйста, попробуйте позже.",
-            Toast.LENGTH_SHORT
-        ).show()
+    private fun makeAuth() {
+        VK.login(
+            activity = requireActivity(),
+            scopes = setOf(
+                VKScope.VIDEO
+            )
+        )
     }
+
+    private fun onAuthSuccess() = Unit
+    private fun onAuthError() = FloatingSnackBar.make(
+        activity = requireActivity(),
+        text = getString(R.string.screen_auth_error_message),
+        isError = false
+//        actionButtonListener = { makeAuth() }
+    ).show()
 
     override fun onDestroyView() {
         super.onDestroyView()

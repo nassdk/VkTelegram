@@ -9,6 +9,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="primary">#1A1A1A</color>
     <color name="secondary">#28218B</color>
+    <color name="primary_secondary">#2E2065</color>
     <color name="color_green_007844">#007844</color>
     <color name="color_blue_0089ED">#0089ED</color>
     <color name="color_white">@android:color/white</color>
@@ -26,6 +27,7 @@
     <color name="default_stroke_color">#EBEBEB</color>
     <color name="orange_F37D0F">#F37D0F</color>
     <color name="red_DE0000">#DE0000</color>
+    <color name="red_FFE4E3">#FFE4E3</color>
     <color name="red_transparent">#0FF40000</color>
     <color name="white_FAFAFA">#FAFAFA</color>
     <color name="gray_F0F0F0">#F0F0F0</color>

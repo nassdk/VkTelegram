@@ -1,0 +1,43 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/primary_secondary"
+    tools:layout_height="wrap_content"
+    tools:layout_width="match_parent"
+    tools:minHeight="48dp"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/warningIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/base_margin_12"
+        app:layout_constraintBottom_toBottomOf="@id/text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text"
+        app:srcCompat="@drawable/ic_warning" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text"
+        style="@style/Widget.App.TextView.White.14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/base_margin_16"
+        android:layout_marginVertical="@dimen/base_margin_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/action"
+        app:layout_constraintStart_toEndOf="@id/warningIcon"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Неправильный логин и/или пароль Неправильный логин и/или пароль" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/action"
+        style="@style/Widget.App.Button.Iconized.Transparent"
+        android:layout_width="48dp"
+        android:layout_height="0dp"
+        android:layout_margin="0dp"
+        app:icon="@drawable/ic_refresh"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</merge>

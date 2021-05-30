@@ -76,6 +76,21 @@
         <item name="cornerRadius">@dimen/corner_radius_8</item>
     </style>
 
+    <style name="Widget.App.Button.Red.Rounded.Four" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/text_size_14</item>
+        <item name="android:textColor">@color/red_DE0000</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="iconTint">@null</item>
+        <item name="backgroundTint">@color/red_FFE4E3</item>
+        <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
     <style name="Widget.App.Button.Iconized.Circle.Stroked" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
@@ -128,6 +143,20 @@
         <item name="strokeColor">@color/gray_F5F4F5</item>
         <item name="backgroundTint">@color/color_white</item>
         <item name="cornerRadius">@dimen/corner_radius_4</item>
+    </style>
+
+
+    <style name="Widget.App.Button.Iconized.Transparent" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="iconTint">@null</item>
+        <item name="paddingEnd">10dp</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="strokeWidth">0dp</item>
+        <item name="backgroundTint">@color/color_transparent</item>
     </style>
 
     <style name="Widget.App.Button.Iconized.Green.Rounded" parent="Widget.MaterialComponents.Button.OutlinedButton">
