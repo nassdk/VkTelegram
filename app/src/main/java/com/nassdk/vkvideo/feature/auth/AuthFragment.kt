@@ -35,8 +35,8 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
         viewModel.authState.onEach { authSuccess ->
             when (authSuccess) {
                 true -> onAuthSuccess()
-                else -> onAuthError()
-//                else -> Unit
+                false -> onAuthError()
+                else -> Unit
             }
         }.launchWhenStarted(lifecycleScope)
     }
@@ -54,8 +54,7 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
     private fun onAuthError() = FloatingSnackBar.make(
         activity = requireActivity(),
         text = getString(R.string.screen_auth_error_message),
-        isError = false
-//        actionButtonListener = { makeAuth() }
+        actionButtonListener = { makeAuth() }
     ).show()
 
     override fun onDestroyView() {
