@@ -565,16 +565,8 @@
 
     <!-- Progress Bar -->
 
-    <style name="progressBlackTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/color_black</item>
-    </style>
-
-    <style name="progressGreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/color_green_007844</item>
-    </style>
-
-    <style name="progressWhiteTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorAccent">@color/color_white</item>
+    <style name="progressPrimarySecond" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorAccent">@color/primary_secondary</item>
     </style>
 
     <!-- Tab Layout -->

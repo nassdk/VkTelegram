@@ -1,76 +1,54 @@
 <androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toolbar"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    app:contentInsetStart="0dp"
-    app:contentInsetStartWithNavigation="0dp">
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   android:id="@+id/toolbar"
+                                   android:layout_width="match_parent"
+                                   android:layout_height="?attr/actionBarSize"
+                                   app:contentInsetStart="0dp"
+                                   app:contentInsetStartWithNavigation="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
         <!-- Предотвращение смещения заголовка вправо при отображении иконки "Назад" -->
         <Space
-            android:id="@+id/navIconPlaceholder"
-            android:layout_width="56dp"
-            android:layout_height="?android:actionBarSize"
-            android:visibility="invisible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:visibility="visible" />
+                android:id="@+id/navIconPlaceholder"
+                android:layout_width="56dp"
+                android:layout_height="?android:actionBarSize"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:visibility="visible"/>
 
-        <LinearLayout
-            android:id="@+id/toolbarTitleContainer"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingHorizontal="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/menuIconPlaceholder"
-            app:layout_constraintStart_toEndOf="@+id/navIconPlaceholder"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <androidx.appcompat.widget.AppCompatTextView
+        <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/titleText"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="2"
                 android:textColor="@color/white"
-                android:textSize="20sp"
-                app:autoSizeMaxTextSize="20sp"
-                app:autoSizeMinTextSize="12sp"
+                android:textSize="@dimen/text_size_28"
+                app:autoSizeMaxTextSize="@dimen/text_size_28"
+                app:autoSizeMinTextSize="@dimen/text_size_16"
                 app:autoSizeTextType="uniform"
-                tools:text="Заголовок" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/navIconPlaceholder"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Заголовок"/>
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/subtitleText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:maxLines="1"
-                android:textColor="@color/white"
-                android:textSize="12sp"
-                android:visibility="gone"
-                tools:text="Подзаголовок"
-                tools:visibility="visible" />
-
-        </LinearLayout>
 
         <!-- Предотвращение смещения заголовка вправо при отображении иконки меню -->
         <Space
-            android:id="@+id/menuIconPlaceholder"
-            android:layout_width="56dp"
-            android:layout_height="?android:actionBarSize"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                android:id="@+id/menuIconPlaceholder"
+                android:layout_width="56dp"
+                android:layout_height="?android:actionBarSize"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

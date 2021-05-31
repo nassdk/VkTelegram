@@ -5,7 +5,6 @@ import android.util.AttributeSet
 import android.util.TypedValue
 import androidx.annotation.DrawableRes
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.ContextCompat
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ToolbarBinding
 import com.nassdk.vkvideo.library.coreui.util.isVisible
@@ -17,8 +16,6 @@ class ToolbarBase @JvmOverloads constructor(
     private val viewBinding: ToolbarBinding
 
     init {
-
-        setBackgroundColor(ContextCompat.getColor(context, R.color.color_white))
 
         val view = inflate(context, R.layout.toolbar, this)
 
@@ -48,9 +45,6 @@ class ToolbarBase @JvmOverloads constructor(
 //            }
 
             titleText.text = title.orEmpty()
-
-            subtitleText.text = subTitle.orEmpty()
-            subtitleText.isVisible(subTitle.isNullOrEmpty().not())
 
             navIconPlaceholder.isVisible(toolbar.navigationIcon == null)
             menuIconPlaceholder.isVisible(!menuEnabled)

@@ -15,5 +15,6 @@
     <string name="screen_auth_button_title">Авторизоваться</string>
     <string name="screen_auth_info_message">Вас приветствует приложение VkVideo. \nСкачивайте, просмотраивайте и делитесь своими видеозаписями из ВКонтакте!</string>
     <string name="screen_auth_error_message">Ошибка авторизации. Пожалуйста, попробуйте снова!</string>
+    <string name="videos_screen_toolbar_title">Ваши видео</string>
 
 </resources>

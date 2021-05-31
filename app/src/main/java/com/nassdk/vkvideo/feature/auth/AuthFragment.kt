@@ -4,6 +4,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ScreenAuthBinding
+import com.nassdk.vkvideo.feature.videos.presentation.VideosFragment
 import com.nassdk.vkvideo.library.coreui.base.BaseFragment
 import com.nassdk.vkvideo.library.coreui.util.FloatingSnackBar
 import com.nassdk.vkvideo.library.coreui.util.launchWhenStarted
@@ -50,7 +51,11 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
         )
     }
 
-    private fun onAuthSuccess() = Unit
+    private fun onAuthSuccess() = activity?.supportFragmentManager
+        ?.beginTransaction()
+        ?.replace(R.id.container, VideosFragment())
+        ?.commit()
+
     private fun onAuthError() = FloatingSnackBar.make(
         activity = requireActivity(),
         text = getString(R.string.screen_auth_error_message),
