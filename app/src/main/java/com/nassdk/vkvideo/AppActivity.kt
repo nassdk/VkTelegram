@@ -8,6 +8,8 @@ import com.nassdk.vkvideo.feature.auth.AuthFragment
 import com.nassdk.vkvideo.feature.splash.SplashFragment
 import com.nassdk.vkvideo.library.coreimpl.common.auth.AuthObserver
 import com.nassdk.vkvideo.library.coreui.util.FloatingSnackBar
+import com.nassdk.vkvideo.library.coreui.util.makeForward
+import com.nassdk.vkvideo.library.coreui.util.makeReplace
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.VKTokenExpiredHandler
 import com.vk.api.sdk.auth.VKAccessToken
@@ -26,9 +28,7 @@ class AppActivity : AppCompatActivity() {
         setContentView(R.layout.app_screen)
 
         if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.container, SplashFragment())
-                .commit()
+            makeForward(fragment = SplashFragment())
         }
 
         VK.addTokenExpiredHandler(tokenTracker)
@@ -69,9 +69,7 @@ class AppActivity : AppCompatActivity() {
 
             lifecycleScope.launchWhenStarted {
 
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, AuthFragment())
-                    .commit()
+                makeReplace(fragment = AuthFragment())
 
                 FloatingSnackBar.make(
                     activity = this@AppActivity,

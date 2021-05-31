@@ -8,6 +8,7 @@ import com.nassdk.vkvideo.feature.videos.presentation.VideosFragment
 import com.nassdk.vkvideo.library.coreui.base.BaseFragment
 import com.nassdk.vkvideo.library.coreui.util.FloatingSnackBar
 import com.nassdk.vkvideo.library.coreui.util.launchWhenStarted
+import com.nassdk.vkvideo.library.coreui.util.makeReplace
 import com.vk.api.sdk.VK
 import com.vk.api.sdk.auth.VKScope
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,10 +52,7 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
         )
     }
 
-    private fun onAuthSuccess() = activity?.supportFragmentManager
-        ?.beginTransaction()
-        ?.replace(R.id.container, VideosFragment())
-        ?.commit()
+    private fun onAuthSuccess() = makeReplace(fragment = VideosFragment())
 
     private fun onAuthError() = FloatingSnackBar.make(
         activity = requireActivity(),
