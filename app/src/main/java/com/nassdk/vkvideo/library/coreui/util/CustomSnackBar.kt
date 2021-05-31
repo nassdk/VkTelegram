@@ -74,6 +74,7 @@ class FloatingSnackBar private constructor(
             activity: Activity,
             text: String = "",
             isError: Boolean = true,
+            hideAfterShow: Boolean = true,
             actionButtonListener: (() -> Unit)? = null
         ): FloatingSnackBar {
 
@@ -104,7 +105,7 @@ class FloatingSnackBar private constructor(
                     else R.drawable.ic_check_mark
                 )
                 sb.animationMode = ANIMATION_MODE_SLIDE
-                sb.duration = if (actionButtonListener == null || !isError)
+                sb.duration = if (hideAfterShow)
                     LENGTH_LONG
                 else
                     LENGTH_INDEFINITE

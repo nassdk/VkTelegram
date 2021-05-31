@@ -54,6 +54,7 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
     private fun onAuthError() = FloatingSnackBar.make(
         activity = requireActivity(),
         text = getString(R.string.screen_auth_error_message),
+        hideAfterShow = true,
         actionButtonListener = { makeAuth() }
     ).show()
 
