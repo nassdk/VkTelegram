@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.nassdk.vkvideo.library.coreui.util.CustomSnackBar xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="48dp" />
+<com.nassdk.vkvideo.library.coreui.util.CustomSnackBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        tools:viewBindingIgnore="true"/>
