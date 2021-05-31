@@ -4,9 +4,12 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
+import com.nassdk.vkvideo.feature.auth.AuthFragment
 import com.nassdk.vkvideo.feature.splash.SplashFragment
 import com.nassdk.vkvideo.library.coreimpl.common.auth.AuthObserver
+import com.nassdk.vkvideo.library.coreui.util.FloatingSnackBar
 import com.vk.api.sdk.VK
+import com.vk.api.sdk.VKTokenExpiredHandler
 import com.vk.api.sdk.auth.VKAccessToken
 import com.vk.api.sdk.auth.VKAuthCallback
 import dagger.hilt.android.AndroidEntryPoint
@@ -27,6 +30,8 @@ class AppActivity : AppCompatActivity() {
                 .add(R.id.container, SplashFragment())
                 .commit()
         }
+
+        VK.addTokenExpiredHandler(tokenTracker)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -56,5 +61,24 @@ class AppActivity : AppCompatActivity() {
                 }
             }
         )
+    }
+
+    private val tokenTracker = object : VKTokenExpiredHandler {
+
+        override fun onTokenExpired() {
+
+            lifecycleScope.launchWhenStarted {
+
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.container, AuthFragment())
+                    .commit()
+
+                FloatingSnackBar.make(
+                    activity = this@AppActivity,
+                    text = getString(R.string.app_screen_token_expired_message),
+                    hideAfterShow = true
+                ).show()
+            }
+        }
     }
 }

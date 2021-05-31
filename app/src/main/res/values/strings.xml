@@ -3,18 +3,28 @@
 
     <integer name="com_vk_sdk_AppId">7854267</integer>
 
+    <!-- App -->
+    <string name="app_screen_token_expired_message">Ваша сессия окончена! Пожалуйста, авторизуйтесь снова!</string>
 
     <!-- Error Messages -->
     <string name="error_server_timeout">Истекло время ожидания от сервера. Пожалуйста, попробуйте позже!</string>
-    <string name="error_server_internal">Не удалось установить соединение с сервером. Пожалуйста, попробуйте позже!</string>
-    <string name="error_server_network">Нет удалось установить соединение с сервом. Пожалуйста, проверьте свое интернет подключение!</string>
+    <string name="error_server_internal">Не удалось установить соединение с сервером. Пожалуйста, попробуйте позже!
+    </string>
+    <string name="error_server_network">Нет удалось установить соединение с сервом. Пожалуйста, проверьте свое интернет
+        подключение!
+    </string>
     <string name="error_server_unknown">Неизвестная ошибка. Пожалуйста, попробуйте позже!</string>
 
 
     <!-- Auth -->
     <string name="screen_auth_button_title">Авторизоваться</string>
-    <string name="screen_auth_info_message">Вас приветствует приложение VkVideo. \nСкачивайте, просмотраивайте и делитесь своими видеозаписями из ВКонтакте!</string>
+    <string name="screen_auth_info_message">Вас приветствует приложение VkVideo. \nСкачивайте, просмотраивайте и
+        делитесь своими видеозаписями из ВКонтакте!
+    </string>
     <string name="screen_auth_error_message">Ошибка авторизации. Пожалуйста, попробуйте снова!</string>
+
+
+    <!-- Videos -->
     <string name="videos_screen_toolbar_title">Ваши видео</string>
 
 </resources>
