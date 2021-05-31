@@ -23,9 +23,9 @@ class AppActivity : AppCompatActivity() {
         setContentView(R.layout.app_screen)
 
         if (savedInstanceState == null) {
-            val fragmentTransaction = supportFragmentManager.beginTransaction()
-            fragmentTransaction.add(R.id.container, SplashFragment())
-            fragmentTransaction.commit()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.container, SplashFragment())
+                .commit()
         }
     }
 
