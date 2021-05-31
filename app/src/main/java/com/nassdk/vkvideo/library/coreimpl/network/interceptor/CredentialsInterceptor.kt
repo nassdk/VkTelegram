@@ -24,9 +24,14 @@ class CredentialsInterceptor @Inject constructor(
 
         val newUrl = originalUrl.newBuilder()
             .addQueryParameter("access_token", accessToken)
+            .addQueryParameter("v", API_VERSION)
 
         val requestBuilder = originalRequest.newBuilder().url(newUrl.build())
 
         return chain.proceed(requestBuilder.build())
+    }
+
+    private companion object {
+        private const val API_VERSION = "5.131"
     }
 }
