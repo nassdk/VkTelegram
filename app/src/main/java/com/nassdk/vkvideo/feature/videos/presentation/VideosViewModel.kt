@@ -14,7 +14,11 @@ class VideosViewModel @Inject constructor(
     private val getVideosUseCase: GetVideosUseCase
 ) : BaseViewModel() {
 
-    val videos = Pager(PagingConfig(pageSize = 10)) {
+    val videos = Pager(PagingConfig(pageSize = PAGE_SIZE)) {
         getVideosUseCase.invoke()
     }.flow.cachedIn(viewModelScope)
+
+    private companion object {
+        private const val PAGE_SIZE = 10
+    }
 }

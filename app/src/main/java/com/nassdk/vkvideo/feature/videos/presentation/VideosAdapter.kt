@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import coil.transform.RoundedCornersTransformation
+import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ItemVideoBinding
 import com.nassdk.vkvideo.feature.videos.domain.model.VideoModel
 
@@ -28,7 +29,7 @@ class VideosAdapter : PagingDataAdapter<VideoModel, VideosAdapter.ViewHolder>(DI
 
                 title.text = item.title
                 description.text = item.description
-                views.text = "${item.views} views"
+                views.text = root.context.getString(R.string.videos_screen_views_count, item.views)
 
                 image.load(uri = item.image) {
                     transformations(RoundedCornersTransformation(radius = 8f))

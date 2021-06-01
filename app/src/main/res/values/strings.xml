@@ -26,5 +26,6 @@
 
     <!-- Videos -->
     <string name="videos_screen_toolbar_title">Ваши видео</string>
+    <string name="videos_screen_views_count">%d просмотров</string>
 
 </resources>

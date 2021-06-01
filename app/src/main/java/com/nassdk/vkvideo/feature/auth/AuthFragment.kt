@@ -19,7 +19,8 @@ class AuthFragment : BaseFragment(R.layout.screen_auth) {
 
     private var _viewBinding: ScreenAuthBinding? = null
 
-    private val viewBinding get() = _viewBinding!!
+    private val viewBinding: ScreenAuthBinding
+        get() = _viewBinding!!
 
     private val viewModel: AuthViewModel by viewModels()
 

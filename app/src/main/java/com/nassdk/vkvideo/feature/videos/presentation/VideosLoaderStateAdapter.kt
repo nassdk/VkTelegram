@@ -16,12 +16,7 @@ class VideosLoaderStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>() {
         is LoadState.NotLoading -> error(message = "Not supported")
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, loadState: LoadState) {
-        when (holder) {
-            is ProgressViewHolder -> holder.bind()
-            is ErrorViewHolder -> holder.bind()
-        }
-    }
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, loadState: LoadState) = Unit
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -43,16 +38,10 @@ class VideosLoaderStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>() {
     }
 
     class ProgressViewHolder(itemBinding: ItemProgressBinding) :
-        RecyclerView.ViewHolder(itemBinding.root) {
-
-        fun bind() = Unit
-    }
+        RecyclerView.ViewHolder(itemBinding.root)
 
     class ErrorViewHolder(itemBinding: ItemErrorBinding) :
-        RecyclerView.ViewHolder(itemBinding.root) {
-
-        fun bind() = Unit
-    }
+        RecyclerView.ViewHolder(itemBinding.root)
 
     private companion object {
         private const val PROGRESS = 1

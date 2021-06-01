@@ -23,7 +23,7 @@ class DataStorage(private val context: Context) {
     suspend fun storeAccessToken(token: String?) {
 
         context.dataStore.edit { preferences ->
-            preferences[PreferenceKeys.accessToken] = token ?: ""
+            preferences[PreferenceKeys.accessToken] = token.orEmpty()
         }
     }
 
