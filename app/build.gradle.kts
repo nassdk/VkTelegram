@@ -7,15 +7,15 @@ plugins {
 }
 
 android {
-    compileSdkVersion(apiLevel = 30)
-    buildToolsVersion(version = "30.0.3")
+    compileSdkVersion(apiLevel = AndroidConfig.compileSdkVersion)
+    buildToolsVersion(version = AndroidConfig.buildToolsVersion)
 
     defaultConfig {
-        applicationId(applicationId = "com.nassdk.vktelegram")
-        minSdkVersion(minSdkVersion = 21)
-        targetSdkVersion(targetSdkVersion = 30)
-        versionCode = 1
-        versionName = "1.0"
+        applicationId(applicationId = AndroidConfig.applicationId)
+        minSdkVersion(minSdkVersion = AndroidConfig.minSdkVersion)
+        targetSdkVersion(targetSdkVersion = AndroidConfig.targetSdkVersion)
+        versionCode = AndroidConfig.VERSION_CODE
+        versionName = AndroidConfig.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
