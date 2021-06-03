@@ -71,5 +71,6 @@ dependencies {
     implementation(dependencyNotation = Dependencies.retrofit)
     implementation(dependencyNotation = Dependencies.serializationConverter)
     implementation(dependencyNotation = Dependencies.coil)
+    implementation(dependencyNotation = Dependencies.timber)
     implementation(dependencyNotation = Dependencies.vkCore)
 }

@@ -28,5 +28,7 @@ object Version {
 
     const val COIL = "1.1.1"
 
+    const val TIMBER = "4.7.1"
+
     const val VK_CORE = "3.1.0"
 }

@@ -37,6 +37,8 @@ object Dependencies {
 
     const val coil = "io.coil-kt:coil:${Version.COIL}"
 
+    const val timber = "com.jakewharton.timber:timber:${Version.TIMBER}"
+
     const val vkCore = "com.vk:android-sdk-core:${Version.VK_CORE}"
 }
 
