@@ -39,6 +39,8 @@ object Dependencies {
 
     const val timber = "com.jakewharton.timber:timber:${Version.TIMBER}"
 
+    const val exoPlayer = "com.google.android.exoplayer:exoplayer:${Version.EXO_PLAYER}"
+
     const val vkCore = "com.vk:android-sdk-core:${Version.VK_CORE}"
 }
 

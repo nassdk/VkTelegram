@@ -72,5 +72,6 @@ dependencies {
     implementation(dependencyNotation = Dependencies.serializationConverter)
     implementation(dependencyNotation = Dependencies.coil)
     implementation(dependencyNotation = Dependencies.timber)
+    implementation(dependencyNotation = Dependencies.exoPlayer)
     implementation(dependencyNotation = Dependencies.vkCore)
 }

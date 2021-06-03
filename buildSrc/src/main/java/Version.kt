@@ -30,5 +30,7 @@ object Version {
 
     const val TIMBER = "4.7.1"
 
+    const val EXO_PLAYER = "r2.14.0"
+
     const val VK_CORE = "3.1.0"
 }
