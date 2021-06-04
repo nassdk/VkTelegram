@@ -14,6 +14,12 @@ fun Fragment.makeReplace(fragment: Fragment) {
     requireActivity()
         .supportFragmentManager
         .beginTransaction()
+        .setCustomAnimations(
+            R.anim.enter_from_right,
+            R.anim.exit_to_left,
+            R.anim.enter_from_left,
+            R.anim.exit_to_right
+        )
         .replace(R.id.container, fragment)
         .commit()
 }
@@ -33,12 +39,24 @@ fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false, tag
         withBackStack -> requireActivity()
             .supportFragmentManager
             .beginTransaction()
+            .setCustomAnimations(
+                R.anim.enter_from_right,
+                R.anim.exit_to_left,
+                R.anim.enter_from_left,
+                R.anim.exit_to_right
+            )
             .add(R.id.container, fragment)
             .addToBackStack(tag)
             .commit()
         else -> requireActivity()
             .supportFragmentManager
             .beginTransaction()
+            .setCustomAnimations(
+                R.anim.enter_from_right,
+                R.anim.exit_to_left,
+                R.anim.enter_from_left,
+                R.anim.exit_to_right
+            )
             .add(R.id.container, fragment)
             .commit()
     }
@@ -58,6 +76,12 @@ fun AppCompatActivity.makeForward(fragment: Fragment, withBackStack: Boolean = f
         withBackStack && tag.isNullOrBlank() -> throw IllegalStateException("Fragment Tag must not be empty or null.")
         withBackStack -> supportFragmentManager
             .beginTransaction()
+            .setCustomAnimations(
+                R.anim.enter_from_right,
+                R.anim.exit_to_left,
+                R.anim.enter_from_left,
+                R.anim.exit_to_right
+            )
             .add(R.id.container, fragment)
             .addToBackStack(tag)
             .commit()
@@ -78,6 +102,12 @@ fun AppCompatActivity.makeReplace(fragment: Fragment) {
 
     supportFragmentManager
         .beginTransaction()
+        .setCustomAnimations(
+            R.anim.enter_from_right,
+            R.anim.exit_to_left,
+            R.anim.enter_from_left,
+            R.anim.exit_to_right
+        )
         .replace(R.id.container, fragment)
         .commit()
 }
