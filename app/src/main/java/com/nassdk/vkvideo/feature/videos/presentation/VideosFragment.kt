@@ -1,5 +1,6 @@
 package com.nassdk.vkvideo.feature.videos.presentation
 
+import android.view.animation.AnimationUtils.loadAnimation
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
@@ -25,6 +26,8 @@ class VideosFragment : BaseFragment(R.layout.screen_videos) {
         VideosAdapter()
     }
 
+    private var animationStarted = false
+
     override fun prepareUi() {
 
         _viewBinding = ScreenVideosBinding.bind(requireView())
@@ -43,7 +46,12 @@ class VideosFragment : BaseFragment(R.layout.screen_videos) {
 
     override fun setupViewModel() {
 
+        val slideUp = loadAnimation(requireContext(), R.anim.slide_up)
+
         viewModel.videos.onEach { videoData ->
+            if (adapter.itemCount == 0)
+                viewBinding.linearContainer.startAnimation(slideUp)
+
             adapter.submitData(videoData)
         }.launchWhenStarted(lifecycleScope)
     }
