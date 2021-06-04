@@ -7,6 +7,7 @@ import androidx.lifecycle.lifecycleScope
 import com.nassdk.vkvideo.feature.auth.AuthFragment
 import com.nassdk.vkvideo.feature.splash.SplashFragment
 import com.nassdk.vkvideo.library.coreimpl.common.auth.AuthObserver
+import com.nassdk.vkvideo.library.coreimpl.common.data.DataStorage
 import com.nassdk.vkvideo.library.coreui.util.FloatingSnackBar
 import com.nassdk.vkvideo.library.coreui.util.makeForward
 import com.nassdk.vkvideo.library.coreui.util.makeReplace
@@ -22,6 +23,8 @@ class AppActivity : AppCompatActivity() {
 
     @Inject
     lateinit var authObserver: AuthObserver
+    @Inject
+    lateinit var dataStorage: DataStorage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +71,8 @@ class AppActivity : AppCompatActivity() {
         override fun onTokenExpired() {
 
             lifecycleScope.launchWhenStarted {
+
+                dataStorage.clearAccessToken()
 
                 makeReplace(fragment = AuthFragment())
 

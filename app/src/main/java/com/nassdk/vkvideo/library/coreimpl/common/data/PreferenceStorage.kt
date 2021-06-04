@@ -27,6 +27,13 @@ class DataStorage(private val context: Context) {
         }
     }
 
+    suspend fun clearAccessToken() {
+
+        context.dataStore.edit { preferences ->
+            preferences[PreferenceKeys.accessToken] = ""
+        }
+    }
+
     suspend fun getAccessToken() = context.dataStore.data
         .catch { exception ->
             if (exception is IOException) {
