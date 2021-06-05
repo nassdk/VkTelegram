@@ -32,10 +32,9 @@ fun Fragment.makeReplace(fragment: Fragment) {
  * @param withBackStack - Should fragment be added to backstack
  * @param tag - Fragment tag for adding to backstack
  */
-fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false, tag: String? = null) {
+fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false) {
 
     when {
-        withBackStack && tag.isNullOrBlank() -> throw IllegalStateException("Fragment Tag must not be empty or null.")
         withBackStack -> requireActivity()
             .supportFragmentManager
             .beginTransaction()
@@ -46,7 +45,7 @@ fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false, tag
                 R.anim.exit_to_right
             )
             .add(R.id.container, fragment)
-            .addToBackStack(tag)
+            .addToBackStack(fragment::class.java.simpleName)
             .commit()
         else -> requireActivity()
             .supportFragmentManager
@@ -73,7 +72,6 @@ fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false, tag
 fun AppCompatActivity.makeForward(fragment: Fragment, withBackStack: Boolean = false, tag: String? = null) {
 
     when {
-        withBackStack && tag.isNullOrBlank() -> throw IllegalStateException("Fragment Tag must not be empty or null.")
         withBackStack -> supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
@@ -83,7 +81,7 @@ fun AppCompatActivity.makeForward(fragment: Fragment, withBackStack: Boolean = f
                 R.anim.exit_to_right
             )
             .add(R.id.container, fragment)
-            .addToBackStack(tag)
+            .addToBackStack(fragment::class.java.simpleName)
             .commit()
         else -> supportFragmentManager
             .beginTransaction()
