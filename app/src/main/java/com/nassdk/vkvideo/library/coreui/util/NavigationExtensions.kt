@@ -8,17 +8,18 @@ import com.nassdk.vkvideo.R
  * Replace fragment transaction ext for making transactions from fragment.
  *
  * @param fragment - Fragment class
+ * @param verticalAnimation - Should make transaction with vertical animation else horizontal
  */
-fun Fragment.makeReplace(fragment: Fragment) {
+fun Fragment.makeReplace(fragment: Fragment, verticalAnimation: Boolean = false) {
 
     requireActivity()
         .supportFragmentManager
         .beginTransaction()
         .setCustomAnimations(
-            R.anim.enter_from_right,
-            R.anim.exit_to_left,
-            R.anim.enter_from_left,
-            R.anim.exit_to_right
+            if (verticalAnimation) R.anim.slide_in_bottom else R.anim.enter_from_right,
+            if (verticalAnimation) R.anim.slide_out_top else R.anim.exit_to_left,
+            if (verticalAnimation) R.anim.slide_in_top else R.anim.enter_from_left,
+            if (verticalAnimation) R.anim.slide_out_bottom else R.anim.exit_to_right
         )
         .replace(R.id.container, fragment)
         .commit()
@@ -30,19 +31,19 @@ fun Fragment.makeReplace(fragment: Fragment) {
  *
  * @param fragment - Fragment class
  * @param withBackStack - Should fragment be added to backstack
- * @param tag - Fragment tag for adding to backstack
+ * @param verticalAnimation - Should make transaction with vertical animation else horizontal
  */
-fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false) {
+fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false, verticalAnimation: Boolean = false) {
 
     when {
         withBackStack -> requireActivity()
             .supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
-                R.anim.enter_from_right,
-                R.anim.exit_to_left,
-                R.anim.enter_from_left,
-                R.anim.exit_to_right
+                if (verticalAnimation) R.anim.slide_in_bottom else R.anim.enter_from_right,
+                if (verticalAnimation) R.anim.slide_out_top else R.anim.exit_to_left,
+                if (verticalAnimation) R.anim.slide_in_top else R.anim.enter_from_left,
+                if (verticalAnimation) R.anim.slide_out_bottom else R.anim.exit_to_right
             )
             .add(R.id.container, fragment)
             .addToBackStack(fragment::class.java.simpleName)
@@ -51,10 +52,10 @@ fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false) {
             .supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
-                R.anim.enter_from_right,
-                R.anim.exit_to_left,
-                R.anim.enter_from_left,
-                R.anim.exit_to_right
+                if (verticalAnimation) R.anim.slide_in_bottom else R.anim.enter_from_right,
+                if (verticalAnimation) R.anim.slide_out_top else R.anim.exit_to_left,
+                if (verticalAnimation) R.anim.slide_in_top else R.anim.enter_from_left,
+                if (verticalAnimation) R.anim.slide_out_bottom else R.anim.exit_to_right
             )
             .add(R.id.container, fragment)
             .commit()
@@ -67,18 +68,22 @@ fun Fragment.makeForward(fragment: Fragment, withBackStack: Boolean = false) {
  *
  * @param fragment - Fragment class
  * @param withBackStack - Should fragment be added to backstack
- * @param tag - Fragment tag for adding to backstack
+ * @param verticalAnimation - Should make transaction with vertical animation else horizontal
  */
-fun AppCompatActivity.makeForward(fragment: Fragment, withBackStack: Boolean = false, tag: String? = null) {
+fun AppCompatActivity.makeForward(
+    fragment: Fragment,
+    withBackStack: Boolean = false,
+    verticalAnimation: Boolean = false
+) {
 
     when {
         withBackStack -> supportFragmentManager
             .beginTransaction()
             .setCustomAnimations(
-                R.anim.enter_from_right,
-                R.anim.exit_to_left,
-                R.anim.enter_from_left,
-                R.anim.exit_to_right
+                if (verticalAnimation) R.anim.slide_in_bottom else R.anim.enter_from_right,
+                if (verticalAnimation) R.anim.slide_out_top else R.anim.exit_to_left,
+                if (verticalAnimation) R.anim.slide_in_top else R.anim.enter_from_left,
+                if (verticalAnimation) R.anim.slide_out_bottom else R.anim.exit_to_right
             )
             .add(R.id.container, fragment)
             .addToBackStack(fragment::class.java.simpleName)
@@ -86,6 +91,12 @@ fun AppCompatActivity.makeForward(fragment: Fragment, withBackStack: Boolean = f
         else -> supportFragmentManager
             .beginTransaction()
             .add(R.id.container, fragment)
+            .setCustomAnimations(
+                if (verticalAnimation) R.anim.slide_in_bottom else R.anim.enter_from_right,
+                if (verticalAnimation) R.anim.slide_out_top else R.anim.exit_to_left,
+                if (verticalAnimation) R.anim.slide_in_top else R.anim.enter_from_left,
+                if (verticalAnimation) R.anim.slide_out_bottom else R.anim.exit_to_right
+            )
             .commit()
     }
 }
@@ -95,16 +106,17 @@ fun AppCompatActivity.makeForward(fragment: Fragment, withBackStack: Boolean = f
  * Replace fragment transaction ext for making transactions from Activity.
  *
  * @param fragment - Fragment class
+ * @param verticalAnimation - Should make transaction with vertical animation else horizontal
  */
-fun AppCompatActivity.makeReplace(fragment: Fragment) {
+fun AppCompatActivity.makeReplace(fragment: Fragment, verticalAnimation: Boolean = false) {
 
     supportFragmentManager
         .beginTransaction()
         .setCustomAnimations(
-            R.anim.enter_from_right,
-            R.anim.exit_to_left,
-            R.anim.enter_from_left,
-            R.anim.exit_to_right
+            if (verticalAnimation) R.anim.slide_in_bottom else R.anim.enter_from_right,
+            if (verticalAnimation) R.anim.slide_out_top else R.anim.exit_to_left,
+            if (verticalAnimation) R.anim.slide_in_top else R.anim.enter_from_left,
+            if (verticalAnimation) R.anim.slide_out_bottom else R.anim.exit_to_right
         )
         .replace(R.id.container, fragment)
         .commit()
