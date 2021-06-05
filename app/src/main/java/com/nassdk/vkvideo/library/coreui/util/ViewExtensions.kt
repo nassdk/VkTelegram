@@ -21,6 +21,10 @@ internal fun View.makeInvisible() {
     visibility = View.INVISIBLE
 }
 
+fun View.onDelayedClick(milliseconds: Long? = null, listener: (v: View) -> Unit) {
+    setOnClickListener(milliseconds?.let { ClickListenerWrapper(it, listener) }
+        ?: ClickListenerWrapper(listener = listener))
+}
 
 internal fun View?.findSuitableParent(): ViewGroup? {
     var view = this
