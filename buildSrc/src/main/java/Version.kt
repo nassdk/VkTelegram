@@ -13,7 +13,7 @@ object Version {
     const val KOTLIN = "1.5.0"
     const val COROUTINES = "1.4.3"
     const val SERIALIZATION_JSON = "1.2.1"
-    const val COROUTINES_CORE = "1.5.0-RC"
+    const val COROUTINES_CORE = "1.5.0"
 
     const val HILT = "2.35"
 
