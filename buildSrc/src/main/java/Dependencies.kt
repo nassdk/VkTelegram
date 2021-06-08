@@ -4,7 +4,6 @@ object Dependencies {
 
     const val coreKtx = "androidx.core:core-ktx:${Version.CORE_KTX}"
     const val appCompat = "androidx.appcompat:appcompat:${Version.APP_COMPAT}"
-    const val activity = "androidx.activity:activity-ktx:${Version.ACTIVITY}"
     const val fragment = "androidx.fragment:fragment-ktx:${Version.FRAGMENT}"
     const val constraint = "androidx.constraintlayout:constraintlayout:${Version.CONSTRAINT}"
 
@@ -47,7 +46,6 @@ object Dependencies {
 fun DependencyHandler.implementAndroidXCore() {
     implementation(dependencyNotation = Dependencies.coreKtx)
     implementation(dependencyNotation = Dependencies.appCompat)
-    implementation(dependencyNotation = Dependencies.activity)
     implementation(dependencyNotation = Dependencies.fragment)
     implementation(dependencyNotation = Dependencies.constraint)
 }
