@@ -4,6 +4,7 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        jcenter()
     }
 
     dependencies {
@@ -11,6 +12,7 @@ buildscript {
         classpath(dependencyNotation = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.0")
         classpath(dependencyNotation = "org.jetbrains.kotlin:kotlin-serialization:1.5.0")
         classpath(dependencyNotation = "com.google.dagger:hilt-android-gradle-plugin:2.35")
+        classpath(dependencyNotation = "io.realm:realm-gradle-plugin:10.4.0")
     }
 }
 
