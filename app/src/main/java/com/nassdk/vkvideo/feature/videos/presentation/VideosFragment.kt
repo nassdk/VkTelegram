@@ -2,15 +2,16 @@ package com.nassdk.vkvideo.feature.videos.presentation
 
 import android.view.animation.AnimationUtils.loadAnimation
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.repeatOnLifecycle
 import androidx.paging.LoadState
 import com.nassdk.vkvideo.R
 import com.nassdk.vkvideo.databinding.ScreenVideosBinding
 import com.nassdk.vkvideo.library.coreui.base.BaseFragment
 import com.nassdk.vkvideo.library.coreui.util.isVisible
-import com.nassdk.vkvideo.library.coreui.util.launchWhenStarted
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.collect
 
 @AndroidEntryPoint
 class VideosFragment : BaseFragment(R.layout.screen_videos) {
@@ -48,12 +49,16 @@ class VideosFragment : BaseFragment(R.layout.screen_videos) {
 
         val slideUp = loadAnimation(requireContext(), R.anim.slide_up)
 
-        viewModel.videos.onEach { videoData ->
-            if (adapter.itemCount == 0)
-                viewBinding.linearContainer.startAnimation(slideUp)
+        lifecycleScope.launchWhenStarted {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModel.videos.collect { videoData ->
+                    if (adapter.itemCount == 0)
+                        viewBinding.linearContainer.startAnimation(slideUp)
 
-            adapter.submitData(videoData)
-        }.launchWhenStarted(lifecycleScope)
+                    adapter.submitData(videoData)
+                }
+            }
+        }
     }
 
     override fun onDestroyView() {

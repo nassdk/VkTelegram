@@ -5,10 +5,7 @@ import com.nassdk.vkvideo.library.coreimpl.common.auth.AuthObserver
 import com.nassdk.vkvideo.library.coreimpl.common.data.DataStorage
 import com.nassdk.vkvideo.library.coreui.base.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,9 +15,7 @@ class AuthViewModel @Inject constructor(
 ) : BaseViewModel() {
 
     private val _authState: MutableStateFlow<Boolean?> = MutableStateFlow(null)
-
-    val authState: StateFlow<Boolean?>
-        get() = _authState
+    val authState get() = _authState.asSharedFlow().filterNotNull()
 
     init {
         handleAuthStatusChanges()
