@@ -8,7 +8,7 @@ object Version {
 
     const val PAGING = "3.0.0"
 
-    const val LIFECYCLE = "2.3.1"
+    const val LIFECYCLE = "2.4.0-alpha03"
 
     const val KOTLIN = "1.5.0"
     const val COROUTINES = "1.4.3"
