@@ -20,11 +20,15 @@ class SplashFragment : BaseFragment(R.layout.screen_splash) {
     override fun prepareUi() {
 
         lifecycleScope.launchWhenStarted {
-            delay(3000)
+            delay(LOADING_DELAY_MILLIS)
 
             makeReplace(
                 fragment = if (dataStorage.getAccessToken().isNullOrBlank()) AuthFragment() else VideosFragment()
             )
         }
+    }
+
+    private companion object {
+        private const val LOADING_DELAY_MILLIS = 3000L
     }
 }

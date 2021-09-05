@@ -10,12 +10,6 @@ import com.nassdk.vkvideo.databinding.ItemProgressBinding
 
 class VideosLoaderStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>() {
 
-    override fun getStateViewType(loadState: LoadState): Int = when (loadState) {
-        LoadState.Loading -> PROGRESS
-        is LoadState.Error -> ERROR
-        is LoadState.NotLoading -> error(message = "Not supported")
-    }
-
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, loadState: LoadState) = Unit
 
     override fun onCreateViewHolder(
@@ -42,9 +36,4 @@ class VideosLoaderStateAdapter : LoadStateAdapter<RecyclerView.ViewHolder>() {
 
     class ErrorViewHolder(itemBinding: ItemErrorBinding) :
         RecyclerView.ViewHolder(itemBinding.root)
-
-    private companion object {
-        private const val PROGRESS = 1
-        private const val ERROR = 0
-    }
 }
